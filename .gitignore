@@ -2,3 +2,23 @@
 # z88dk compiler intermediates
 # -----------------------------------------------------------------------------
 *.*.asm
+# vscode
+.vscode/
+#object files
+*.o
+*.obj
+
+#/bin folder
+/bin/
+
+# temporary files
+*.tmp
+*.swp
+*.bak
+*.log
+*.cache
+
+#cc6 compiler intermediates
+*.lst
+*.sym
+*.map
