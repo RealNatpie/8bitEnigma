@@ -10,6 +10,7 @@
 #include <cpar.h>
 #include "CPMText.h"
 #include "plugboard.h"
+#include "../parser_errors.h"
 
 int main()
 {
@@ -20,6 +21,12 @@ int main()
 	printCenteredText("Enigma CP/M", 80);
 	//printf("Enigma CP/M\n");
 	printCenteredText("By Nathanael Nunes 2026", 80);
+	printf("Loading...\n");
+	if(EnigmaInitilize() != PARSER_OK)
+	{
+		printf("Error in confiuration file.\n");
+		return 1;
+	}
 	//printf("By Nathanael Nunes 2026\n");
 	printf("Config file version: %d\n", configVersion);
 	printf("Rotor struct size: %d bytes\n", (int)sizeof(Rotors));

@@ -5,6 +5,43 @@ void clearScreen()
     // Clear the screen using ANSI escape codes
     printf("\033[2J\033[H");
 }
+void cursorUp(char lines)
+{
+    printf("\033[[%dA", lines);
+}
+void cursorDown(char lines)
+{
+    printf("\033[[%dB",lines);
+}
+void cursorRight(char lines)
+{
+    printf("\033[[%dC",lines);
+}
+void cursorLeft(char lines)
+{
+    printf("\033[[%dD",lines);
+}
+void cursorHome()
+{
+    printf("\033[H");
+}
+void setCursorPosition(char row, char col)
+{
+    printf("\033[%d;%dH", row, col);
+}
+void clearLine()
+{
+    printf("\033[2K");
+}
+void clearRight()
+{
+    printf("\033[0K");
+}
+void clearDown()
+{
+    printf("\033[1K");
+}
+
 void printCenteredText(const char* text, int width)
 {
     int textLength = strlen(text);
